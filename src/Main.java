@@ -5,9 +5,9 @@ public class Main
     public static void main(String[] args) {
         System.out.println("\t \t \t" + "Lab 1 Java");
         //Task1();
-        Task2();
+        //Task2();
         //Task3();
-        //Task4();
+        Task4();
     }
     static void Task1()
     {
@@ -108,5 +108,18 @@ public class Main
         for (int i = 0; i < n; i++)
             System.out.print(y[i] + "\t");
 
+    }
+    static void Task4()
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Введіть текст:");
+        String Text = in.nextLine();
+
+        String[] words = Text.split("[\\s\\p{Punct}]");
+
+        System.out.println("Результат:");
+        for (String word : words)
+            if (word.length() % 2 == 0)
+                System.out.print(word + " ");
     }
 }
