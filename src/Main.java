@@ -4,9 +4,9 @@ public class Main
 {
     public static void main(String[] args) {
         System.out.println("\t \t \t" + "Lab 1 Java");
-        //Task1();
-        //Task2();
-        //Task3();
+        Task1();
+        Task2();
+        Task3();
         Task4();
     }
     static void Task1()
@@ -111,6 +111,7 @@ public class Main
     }
     static void Task4()
     {
+        System.out.println("\t" + "\t" + "\t" + "Task 4");
         Scanner in = new Scanner(System.in);
         System.out.println("Введіть текст:");
         String Text = in.nextLine();
