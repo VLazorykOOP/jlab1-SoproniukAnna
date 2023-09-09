@@ -5,8 +5,9 @@ public class Main
     public static void main(String[] args) {
         System.out.println("\t \t \t" + "Lab 1 Java");
         //Task1();
-        //Task2();
-        Task3();
+        Task2();
+        //Task3();
+        //Task4();
     }
     static void Task1()
     {
@@ -33,10 +34,13 @@ public class Main
         int k = in.nextInt();
         int n;
 
-        do {
+        do
+        {
             System.out.print("n = ");
             n = in.nextInt();
         } while (n > 200 || n < 1);
+
+        k %= n;
 
         int[] a = new int[n];
         System.out.println("Початковий масив");
@@ -47,14 +51,16 @@ public class Main
         }
         System.out.println();
 
+        int[] tmp = new int[k];
+        for (int i = 0; i < k; i++)
+            tmp[i] = a[n - k + i];
 
         for (int i = 0; i < k; i++)
-        {
-            int tmp = a[n - 1 - i];
-            for (int y = n - 1 - i; y >= k; y -= k)
-                a[y] = a[y - k];
-            a[k - 1 - i] = tmp;
-        }
+           for (int y = n - 1 - i; y >= k; y -= k)
+               a[y] = a[y - k];
+
+        for (int i = 0; i < k; i++)
+            a[i] = tmp[i];
 
         System.out.println("Масив після зсуву");
         for (int i = 0; i < n; i++)
