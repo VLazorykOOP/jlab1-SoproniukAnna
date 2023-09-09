@@ -1,11 +1,12 @@
+import java.util.Arrays;
 import java.util.Scanner;
 public class Main
 {
     public static void main(String[] args) {
         System.out.println("\t \t \t" + "Lab 1 Java");
         //Task1();
-        Task2();
-
+        //Task2();
+        Task3();
     }
     static void Task1()
     {
@@ -59,5 +60,47 @@ public class Main
         for (int i = 0; i < n; i++)
             System.out.print(a[i]+"\t");
         System.out.println();
+    }
+    static void Task3()
+    {
+        System.out.println("\t" + "\t" + "\t" + "Task 3");
+        Scanner in = new Scanner(System.in);
+        System.out.print(" n = ");
+        int n = in.nextInt();
+        int [][] x = new int[n][n];
+        boolean [] y = new boolean[n];
+        System.out.println();
+
+        Arrays.fill(y, true);
+
+        System.out.println(" Ввід матриці");
+        for (int i = 0; i < n; i++)
+        {
+            System.out.println(" Введіть " + i + " рядок матриці");
+            for (int j = 0; j < n; j++)
+                x[i][j] = in.nextInt();
+        }
+
+        System.out.println();
+        System.out.println(" Вивід матриці");
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+                System.out.print(x[i][j] + "\t");
+            System.out.println();
+        }
+
+        for (int i = 0; i < n; i++)
+            for (int j = 0; j < n; j++)
+            {
+                for (int k = j + 1; y[i] && k < n; k++)
+                    if (x[i][j] == x[i][k])
+                        y[i] = false;
+            }
+
+        System.out.println("Результат");
+        for (int i = 0; i < n; i++)
+            System.out.print(y[i] + "\t");
+
     }
 }
